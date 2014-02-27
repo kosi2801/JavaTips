@@ -1,5 +1,9 @@
 package com.kosi2801.javatips;
 
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
+
 /**
  * Example for the Java Tip #11: Use ObjectUtils.toString() for an implicit null-check and default value
  * 
@@ -8,5 +12,20 @@ package com.kosi2801.javatips;
  * 
  */
 public class Tip11UseObjectUtilsToStringForNullsafeDefault {
+
+    /**
+     * @deprecated bla
+     * @see after_1()
+     */
+    @Test
+    @Deprecated
+    public void before_1() {
+        fail("not yet implemented");
+    }
+    
+    @Test
+    public void after_1() {
+        fail("not yet implemented");
+    }
 
 }

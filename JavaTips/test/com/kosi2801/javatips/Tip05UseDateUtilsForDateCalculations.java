@@ -1,5 +1,9 @@
 package com.kosi2801.javatips;
 
+import static org.junit.Assert.fail;
+
+import org.junit.Test;
+
 /**
  * Example for the Java Tip #5: Use Apache Commons DateUtils when dealing with dates
  * 
@@ -8,5 +12,20 @@ package com.kosi2801.javatips;
  * 
  */
 public class Tip05UseDateUtilsForDateCalculations {
+
+    /**
+     * @deprecated bla
+     * @see after_1()
+     */
+    @Test
+    @Deprecated
+    public void before_1() {
+        fail("not yet implemented");
+    }
+    
+    @Test
+    public void after_1() {
+        fail("not yet implemented");
+    }
 
 }
