@@ -1,7 +1,9 @@
 package com.kosi2801.javatips;
 
-import static org.junit.Assert.fail;
+import java.util.Calendar;
+import java.util.Date;
 
+import org.apache.commons.lang3.time.DateUtils;
 import org.junit.Test;
 
 /**
@@ -14,18 +16,26 @@ import org.junit.Test;
 public class Tip05UseDateUtilsForDateCalculations {
 
     /**
-     * @deprecated bla
+     * @deprecated Using the Calendar class for manipulating Date is cumbersome
+     *             and error-prone. Use DateUtils instead.
      * @see after_1()
      */
     @Test
     @Deprecated
     public void before_1() {
-        fail("not yet implemented");
+        Date now = new Date();
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(now);
+        cal.add(Calendar.DATE, 1);
+
+        Date tomorrow = cal.getTime();
     }
-    
+
     @Test
     public void after_1() {
-        fail("not yet implemented");
+        Date now = new Date();
+        Date tomorrow = DateUtils.addDays(now, 1);
     }
 
 }

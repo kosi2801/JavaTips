@@ -1,8 +1,11 @@
 package com.kosi2801.javatips;
 
-import static org.junit.Assert.fail;
+import java.util.Iterator;
+import java.util.List;
 
 import org.junit.Test;
+
+import com.google.common.primitives.Ints;
 
 /**
  * Example for the Java Tip #6: Use the for-each of Java5 whenever possible
@@ -13,19 +16,47 @@ import org.junit.Test;
  */
 public class Tip06UseJava5ForEach {
 
+    // Test-Collection
+    private final static List<Integer> numberList = Ints.asList(1, 3, 4, 6, 7, 21);
+
     /**
-     * @deprecated bla
+     * @deprecated Manually iterating over collection and fetching the value each time is cumbersome and (depending on
+     *             the type of collection) possibly a performance bottleneck. If the index/position of an element is not
+     *             neccessary and the collection is not modified during the looping use foreach-loop instead.
      * @see after_1()
      */
     @Test
     @Deprecated
     public void before_1() {
-        fail("not yet implemented");
+        for (int i = 0; i < numberList.size(); i++) {
+            Integer value = numberList.get(i);
+
+            System.out.println("Number: " + value);
+        }
     }
-    
+
+    /**
+     * @deprecated Manually iterating over collection and fetching the value each time is cumbersome and (depending on
+     *             the type of collection) possibly a performance bottleneck. If the index/position of an element is not
+     *             neccessary and the collection is not modified during the looping use foreach-loop instead.
+     * @see after_1()
+     */
+    @Test
+    @Deprecated
+    public void before_2() {
+        Iterator<Integer> numberIter = numberList.iterator();
+        while (numberIter.hasNext()) {
+            Integer value = (Integer)numberIter.next();
+
+            System.out.println("Number: " + value);
+        }
+    }
+
     @Test
     public void after_1() {
-        fail("not yet implemented");
+        for (Integer value : numberList) {
+            System.out.println("Number: " + value);
+        }
     }
 
 }
